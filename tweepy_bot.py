@@ -1,6 +1,5 @@
 import tweepy
 import datetime
-import schedule
 import app
 
 auth = tweepy.OAuthHandler(app.api_key, app.api_secret)
@@ -23,10 +22,3 @@ def send_tweet():
     num += 1
 
     print("successfully updated Twitter status today")
-
-
-# run the func send_tweet()
-schedule.every(1).days.do(send_tweet)
-
-while True:
-    schedule.run_pending()
